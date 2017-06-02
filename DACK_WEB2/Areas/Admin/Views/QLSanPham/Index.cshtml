@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BabyShopConnection.sanpham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH CHI TIẾT SẢN PHẨM</h2>
+<p>
+    @Html.ActionLink("CREATE NEW", "Create")
+</p>
+
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"><i class="icon-th"></i></span>
+        <h5>Data table</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered data-table">
+            <thead>
+                <tr>
+                    <th width="20">STT</th>
+                    <th width="100">Tên sản phẩm</th>
+                    <th width="150">Hình ảnh</th>
+                    <th width="50">Mô tả</th>
+                    <th width="50">Nhà sản xuất</th>
+                    <th width="50">Ngày nhập</th>
+                    <th width="30">Số lượng bán</th>
+                    <th width="30">Số lượng tồn</th>
+                    <th width="30">Số lượng xem</th>
+                    <th width="50">Loại Sản Phẩm</th>
+                    <th width="80">Xuất xứ</th>
+                    <th width="70">Giá bán</th>
+                    <th width="30">Trạng thái</th>
+                    <th width="100">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int i = 1; }
+                @foreach (var item in Model)
+                {
+
+                    <tr class="gradeX">
+                        <td>@(i++)</td>
+                        <td>@item.TenSanPham</td>
+                        <td><img src="@Url.Content("~/images/home/" + @item.HinhAnh)" /></td>
+                        <td>@Html.Raw(item.MoTa)</td>
+                        <td>@item.MaNhaSanXuat</td>
+                        <td class="center">@item.NgayNhap</td>
+                        <td>@item.SoLuongBan</td>
+                        <td>@item.SoLuongTon</td>
+                        <td>@item.SoLuongXem</td>
+                        <td>@item.MaLoaiSanPham</td>
+                        <td>@item.XuatXu</td>
+                        <td>@item.GiaBan</td>
+                        <td>@item.BiXoa</td>
+                        <td>
+                            <a href="@Url.Action("Edit","QLSanPham", new { id = item.MaSanPham})">
+                                <img src="@Url.Content("~/Areas/Admin/Asset/images/edit.png")" />
+                            </a> |
+                            <a href="@Url.Action("Delete", "QLSanPham", new { id = item.MaSanPham })">
+                                <img src="@Url.Content("~/Areas/Admin/Asset/images/delete.png")" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
