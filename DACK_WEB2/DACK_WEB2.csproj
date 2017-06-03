@@ -196,6 +196,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLLoaiSanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLNhaSanXuatController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLSanPhamController.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLloaisanphambus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLNhaSanXuatbus.cs" />
@@ -409,6 +411,8 @@
     <Content Include="Areas\Admin\Views\QLSanPham\Create.cshtml" />
     <Content Include="Areas\Admin\Views\QLSanPham\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\QLSanPham\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhaSanXuat\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLLoaiSanPham\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -22,5 +22,15 @@ namespace DACK_WEB2.Areas.Admin.Models.BUS
             }
 
         }
+        public static void ThemNhaSanXuat(nhasanxuat nsx)
+        {
+            var db = new BabyShopConnectionDB();
+            db.Insert(nsx);
+        }
+        public static void EditNhaSanXuat(int id, nhasanxuat nsx)
+        {
+            var db = new BabyShopConnectionDB();
+            db.Update<nhasanxuat>("SET TenNhaSanXuat=@0, LoGoURL=@1, BiXoa=@2 where MaNhaSanXuat=@3", nsx.TenNhaSanXuat, nsx.LoGoURL, nsx.BiXoa, id);
+        }
     }
 }

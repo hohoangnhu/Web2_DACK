@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BabyShopConnection.loaisanpham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH CHI TIẾT LOẠI SẢN PHẨM</h2>
+<p>
+    @Html.ActionLink("CREATE NEW", "Create")
+</p>
+
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"><i class="icon-th"></i></span>
+        <h5>Data table</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered data-table">
+            <thead>
+                <tr>
+                    <th width="100" align="center">Mã Loại Sản Phẩm</th>
+                    <th width="200" align="center">Tên Loại Sản Phẩm</th>
+                    <th width="50" align="center">Trạng thái</th>
+                    <th width="150" align="center">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int i = 1; }
+                @foreach (var item in Model)
+                {
+
+                    <tr class="gradeX">
+                        <td>@(i++)</td>
+                        <td>@item.TenLoaiSanPham</td>
+                        <td>@item.BiXoa</td>
+                        <td>
+                            <a href="@Url.Action("Edit","QLSanPham", new { id = item.MaLoaiSanPham})">
+                                <img src="@Url.Content("~/Areas/Admin/Asset/images/edit.png")" />
+                            </a> |
+                            <a href="@Url.Action("Delete", "QLSanPham", new { id = item.MaLoaiSanPham })">
+                                <img src="@Url.Content("~/Areas/Admin/Asset/images/delete.png")" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
