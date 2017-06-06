@@ -413,6 +413,8 @@
     <Content Include="Areas\Admin\Views\QLSanPham\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\QLNhaSanXuat\Index.cshtml" />
     <Content Include="Areas\Admin\Views\QLLoaiSanPham\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhaSanXuat\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QLLoaiSanPham\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

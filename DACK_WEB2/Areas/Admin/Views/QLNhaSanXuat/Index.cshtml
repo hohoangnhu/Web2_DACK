@@ -18,11 +18,11 @@
         <table class="table table-bordered data-table">
             <thead>
                 <tr>
-                    <th width="100" align="center">Mã Nhà Sản Xuất</th>
-                    <th width="200" align="center">Tên Nhà Sản Xuất</th>
-                    <th width="200" align="center">Hình ảnh</th>
-                    <th width="50" align="center">Trạng thái</th>
-                    <th width="150" align="center">Thao tác</th>
+                    <th width="50"align="center">Ma Nhà Sản Xuất</th>
+                    <th width="100"align="center">Tên Nhà Sản Xuất</th>
+                    <th width="150"align="center" height="150">Hình ảnh</th>
+                    <th width="50"align="center">Bị Xóa</th>
+                    <th width="100"align="center">Trạng Thai</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +33,7 @@
                     <tr class="gradeX">
                         <td>@(i++)</td>
                         <td>@item.TenNhaSanXuat</td>
-                        <td><img src="@Url.Content("~/images/home/" + @item.LoGoURL)" /></td>
+                        <td width="100"align="center" height="75"><img src="@Url.Content("~/images/home/" + @item.LoGoURL + ".jpg")" /></td>
                         <td>@item.BiXoa</td>
                         <td>
                             <a href="@Url.Action("Edit","QLSanPham", new { id = item.MaNhaSanXuat})">

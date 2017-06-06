@@ -1,4 +1,5 @@
-﻿using DACK_WEB2.Areas.Admin.Models.BUS;
+﻿using BabyShopConnection;
+using DACK_WEB2.Areas.Admin.Models.BUS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,18 +31,11 @@ namespace DACK_WEB2.Areas.Admin.Controllers
 
         // POST: Admin/QLLoaiSanPham/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(loaisanpham lsp)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            QLloaisanphambus.ThemLoaiSanPham(lsp);
+            return RedirectToAction("Index");
         }
 
         // GET: Admin/QLLoaiSanPham/Edit/5

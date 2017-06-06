@@ -1,4 +1,5 @@
-﻿using DACK_WEB2.Areas.Admin.Models.BUS;
+﻿using BabyShopConnection;
+using DACK_WEB2.Areas.Admin.Models.BUS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,18 +31,22 @@ namespace DACK_WEB2.Areas.Admin.Controllers
 
         // POST: Admin/QLNhaSanXuat/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(nhasanxuat nsx)
         {
-            try
+            if (HttpContext.Request.Files.Count > 0)
             {
-                // TODO: Add insert logic here
+                var hpf = HttpContext.Request.Files[0];
+                if (hpf.ContentLength > 0)
+                {
+                    string fileName = Guid.NewGuid().ToString();
 
-                return RedirectToAction("Index");
+                    string fullPathWithFileName = "~/images/home/" + fileName + ".jpg";
+                    hpf.SaveAs(Server.MapPath(fullPathWithFileName));
+                    nsx.LoGoURL = fileName + ".jpg";
+                }
             }
-            catch
-            {
-                return View();
-            }
+            QLNhaSanXuatbus.ThemNhaSanXuat(nsx);
+            return RedirectToAction("Index");
         }
 
         // GET: Admin/QLNhaSanXuat/Edit/5
