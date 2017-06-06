@@ -401,8 +401,6 @@
     </Content>
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
-    <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -411,10 +409,18 @@
     <Content Include="Areas\Admin\Views\QLSanPham\Create.cshtml" />
     <Content Include="Areas\Admin\Views\QLSanPham\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\QLSanPham\Delete.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
+    <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
+=======
     <Content Include="Areas\Admin\Views\QLNhaSanXuat\Index.cshtml" />
     <Content Include="Areas\Admin\Views\QLLoaiSanPham\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Areas\Admin\Views\QLNhaSanXuat\Create.cshtml" />
     <Content Include="Areas\Admin\Views\QLLoaiSanPham\Create.cshtml" />
+=======
+>>>>>>> e11cb18b36ebc1d2945eb74b1655db9627d3bd77
+>>>>>>> ff31504affd09ca4a7c241032b5d3d8642f471d8
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
